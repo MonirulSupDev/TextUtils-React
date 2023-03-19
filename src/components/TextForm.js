@@ -91,7 +91,7 @@ export default function TextForm(props) {
       >
         <h2>Your text summery</h2>
         <p>
-          {text.split(" ").filter((element)=>{return element.lenght!==0}).length} words and {text.length} caracters.
+          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} caracters.
         </p>
         <p>{0.008 * text.split(" ").filter((element)=>{return element.lenght!==0}).length} Minutes to read.</p>
         <h2>Preview</h2>
