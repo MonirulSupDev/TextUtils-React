@@ -34,10 +34,7 @@ export default function TextForm(props) {
 
   //Copy text
   const handleCopyClick = () => {
-    let text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
-    document.getSelection().removeAllRanges();
+    navigator.clipboard.writeText(text);
     props.showAlert("Copied to clipboard!","success");
   };
 
@@ -91,7 +88,7 @@ export default function TextForm(props) {
       >
         <h2>Your text summery</h2>
         <p>
-          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} caracters.
+          {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} caracters.
         </p>
         <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes to read.</p>
         <h2>Preview</h2>
